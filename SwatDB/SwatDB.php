@@ -538,7 +538,7 @@ class SwatDB extends SwatObject
 
         $rs = self::executeStoredProc($db, $proc, $params);
         $row = $rs->getFirst();
-        return current($row);
+        return current((array)$row);
     }
 
     // }}}

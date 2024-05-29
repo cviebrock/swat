@@ -253,10 +253,6 @@ abstract class SwatTreeNode extends SwatObject implements
 
     /**
      * Gets the number of nodes in this tree or subtree
-     *
-     * This method is needed to fulfill the Countable interface.
-     *
-     * @return integer the number of nodes in this tree or subtree.
      */
     public function count(): int
     {

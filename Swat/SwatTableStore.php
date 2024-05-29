@@ -33,10 +33,6 @@ class SwatTableStore extends SwatObject implements SwatTableModel
 
     /**
      * Gets the number of rows
-     *
-     * This satisfies the Countable interface.
-     *
-     * @return integer the number of rows in this data structure.
      */
     public function count(): int
     {
