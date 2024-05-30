@@ -12,5 +12,8 @@ yarn-debug.log*
 yarn-error.log*
 *.swp
 
+# IDE-specific files
+.idea
+
 # dependency lock file
 composer.lock
