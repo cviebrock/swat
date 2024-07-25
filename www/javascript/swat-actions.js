@@ -26,7 +26,7 @@ class SwatActions {
       document.createTextNode(SwatActions.dismiss_text)
     );
 
-    message_dismiss.addEventListener('click', e => {
+    message_dismiss.addEventListener('click', (e) => {
       e.preventDefault();
       this.handleMessageClose();
     });
@@ -49,7 +49,7 @@ class SwatActions {
       this.handleChange();
     });
 
-    button.addEventListener('click', e => {
+    button.addEventListener('click', (e) => {
       this.handleButtonClick(e);
     });
   }
@@ -131,7 +131,7 @@ class SwatActions {
       this.message_span
         .animate([{ opacity: 0 }, { opacity: 1 }], {
           duration: 300,
-          easing: 'ease-in'
+          easing: 'ease-in',
         })
         .finished.then(() => {
           this.message_span.style.opacity = 1;
@@ -146,7 +146,7 @@ class SwatActions {
       this.message_span
         .animate([{ opacity: 1 }, { opacity: 0 }], {
           duration: 300,
-          easing: 'ease-out'
+          easing: 'ease-out',
         })
         .finished.then(() => {
           this.message_span.style.opacity = 0;

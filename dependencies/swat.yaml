@@ -23,7 +23,6 @@ Swat:
     - SwatYUI
 
   Provides:
-
     # JavaScript resources
     packages/swat/javascript/swat-accordion.js:
     packages/swat/javascript/swat-actions.js:

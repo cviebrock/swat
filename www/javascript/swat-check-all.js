@@ -43,7 +43,7 @@ class SwatCheckAll {
       container
         .animate([{ opacity: 0 }, { opacity: 1 }], {
           duration: 500,
-          easing: 'ease-in'
+          easing: 'ease-in',
         })
         .finished.then(() => {
           container.style.opacity = 1;

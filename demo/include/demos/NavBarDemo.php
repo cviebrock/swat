@@ -11,17 +11,17 @@ require_once 'Demo.php';
  */
 class NavBarDemo extends Demo
 {
-	// {{{ public function buildDemoUI()
+    // {{{ public function buildDemoUI()
 
-	public function buildDemoUI(SwatUI $ui)
-	{
-		$navbar = $ui->getWidget('navbar_demo');
-		$navbar->addEntry(new SwatNavBarEntry('Home', '#'));
-		$navbar->addEntry(new SwatNavBarEntry('Demos', '#'));
-		$navbar->addEntry(new SwatNavBarEntry('NavBar'));
-	}
+    public function buildDemoUI(SwatUI $ui)
+    {
+        $navbar = $ui->getWidget('navbar_demo');
+        $navbar->addEntry(new SwatNavBarEntry('Home', '#'));
+        $navbar->addEntry(new SwatNavBarEntry('Demos', '#'));
+        $navbar->addEntry(new SwatNavBarEntry('NavBar'));
+    }
 
-	// }}}
+    // }}}
 }
 
 ?>

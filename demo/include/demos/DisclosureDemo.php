@@ -11,32 +11,35 @@ require_once 'Demo.php';
  */
 class DisclosureDemo extends Demo
 {
-	// {{{ public function buildDemoUI()
+    // {{{ public function buildDemoUI()
 
-	public function buildDemoUI(SwatUI $ui)
-	{
-		$radiolist = $ui->getWidget('radio_list');
-		$radiolist->addOptionsByArray(array(
-			0 => 'Apple',
-			1 => 'Orange',
-			2 => 'Banana',
-			3 => 'Pear',
-			4 => 'Pineapple',
-			5 => 'Kiwi',
-			6 => 'Tangerine',
-			7 => 'Grapefruit',
-			8 => 'Strawberry'));
+    public function buildDemoUI(SwatUI $ui)
+    {
+        $radiolist = $ui->getWidget('radio_list');
+        $radiolist->addOptionsByArray([
+            0 => 'Apple',
+            1 => 'Orange',
+            2 => 'Banana',
+            3 => 'Pear',
+            4 => 'Pineapple',
+            5 => 'Kiwi',
+            6 => 'Tangerine',
+            7 => 'Grapefruit',
+            8 => 'Strawberry',
+        ]);
 
-		$message = new SwatMessage('Both disclosure types support '.
-			'progressive enhancement.');
+        $message = new SwatMessage(
+            'Both disclosure types support ' . 'progressive enhancement.',
+        );
 
-		$message->secondary_content = 'Turn off JavaScript in your browser '.
-			'and reload the page for a demonstration.';
+        $message->secondary_content =
+            'Turn off JavaScript in your browser ' .
+            'and reload the page for a demonstration.';
 
-		$ui->getWidget('note')->add($message, SwatMessageDisplay::DISMISS_OFF);
-	}
+        $ui->getWidget('note')->add($message, SwatMessageDisplay::DISMISS_OFF);
+    }
 
-	// }}}
+    // }}}
 }
 
 ?>

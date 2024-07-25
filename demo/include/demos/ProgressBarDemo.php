@@ -14,21 +14,22 @@ require_once 'Demo.php';
  */
 class ProgressBarDemo extends Demo
 {
-	// {{{ public function buildDemoUI()
+    // {{{ public function buildDemoUI()
 
-	public function buildDemoUI(SwatUI $ui)
-	{
-		$message = new SwatMessage(
-			'Progress bars are easily controlled from JavaScript.');
+    public function buildDemoUI(SwatUI $ui)
+    {
+        $message = new SwatMessage(
+            'Progress bars are easily controlled from JavaScript.',
+        );
 
-		$message->secondary_content =
-			'Mouse over the Download Progress bar or click the Upload '.
-			'Progress bar for a demonstration.';
+        $message->secondary_content =
+            'Mouse over the Download Progress bar or click the Upload ' .
+            'Progress bar for a demonstration.';
 
-		$ui->getWidget('note')->add($message, SwatMessageDisplay::DISMISS_OFF);
-	}
+        $ui->getWidget('note')->add($message, SwatMessageDisplay::DISMISS_OFF);
+    }
 
-	// }}}
+    // }}}
 }
 
 ?>

@@ -136,33 +136,33 @@ class SwatProgressBar {
       default:
         full_keyframes = [
           { width: old_full_width + '%' },
-          { width: new_full_width + '%' }
+          { width: new_full_width + '%' },
         ];
         empty_keyframes = [
           { width: old_empty_width + '%' },
-          { width: new_empty_width + '%' }
+          { width: new_empty_width + '%' },
         ];
         break;
 
       case SwatProgressBar.ORIENTATION_BOTTOM_TO_TOP:
         full_keyframes = [
           { top: old_empty_width + '%', height: old_full_width + '%' },
-          { top: new_empty_width + '%', height: new_full_width + '%' }
+          { top: new_empty_width + '%', height: new_full_width + '%' },
         ];
         empty_keyframes = [
           { top: -old_full_width + '%', height: old_empty_width + '%' },
-          { top: -new_full_width + '%', height: new_empty_width + '%' }
+          { top: -new_full_width + '%', height: new_empty_width + '%' },
         ];
         break;
 
       case SwatProgressBar.ORIENTATION_TOP_TO_BOTTOM:
         full_keyframes = [
           { height: old_full_width + '%' },
-          { height: new_full_width + '%' }
+          { height: new_full_width + '%' },
         ];
         empty_keyframes = [
           { height: old_empty_width + '%' },
-          { height: new_empty_width + '%' }
+          { height: new_empty_width + '%' },
         ];
         break;
     }
@@ -183,7 +183,7 @@ class SwatProgressBar {
 
     this.full_animation = this.full
       .animate(full_keyframes, {
-        duration: SwatProgressBar.ANIMATION_DURATION * 1000
+        duration: SwatProgressBar.ANIMATION_DURATION * 1000,
       })
       .finished.then(() => {
         Object.entries(full_keyframes[1]).forEach(([key, value]) => {
@@ -193,7 +193,7 @@ class SwatProgressBar {
 
     this.empty_animation = this.empty
       .animate(empty_keyframes, {
-        duration: SwatProgressBar.ANIMATION_DURATION * 1000
+        duration: SwatProgressBar.ANIMATION_DURATION * 1000,
       })
       .finished.then(() => {
         Object.entries(empty_keyframes[1]).forEach(([key, value]) => {

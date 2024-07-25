@@ -143,7 +143,7 @@ class SwatTableViewInputRow {
     dest_tr.animate(
       [
         { backgroundColor: 'rgba(255,251,201,1)' },
-        { backgroundColor: 'rgba(255,251,201,0)' }
+        { backgroundColor: 'rgba(255,251,201,0)' },
       ],
       { duration: 1000, easing: 'ease-out' }
     );
@@ -204,8 +204,8 @@ function SwatTableViewInputRow_getXMLParser() {
 
   // Cannot add loadXML method to a newly created DOMParser because it
   // crashes Safari
-  var parser = function() {};
-  parser.loadXML = function(document_string) {
+  var parser = function () {};
+  parser.loadXML = function (document_string) {
     return dom_parser.parseFromString(document_string, 'text/xml');
   };
 

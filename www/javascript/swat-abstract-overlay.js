@@ -98,7 +98,7 @@ class SwatAbstractOverlay {
   createOverlay(event) {
     this.overlay = new YAHOO.widget.Overlay(this.id + '_overlay', {
       visible: false,
-      constraintoviewport: true
+      constraintoviewport: true,
     });
 
     this.overlay.body.appendChild(this.getBodyContent());

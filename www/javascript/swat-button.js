@@ -14,7 +14,7 @@ class SwatButton {
       this.initThrobber();
     }
 
-    this.button.addEventListener('click', e => {
+    this.button.addEventListener('click', (e) => {
       this.handleClick(e);
     });
   }
@@ -58,7 +58,7 @@ class SwatButton {
   showThrobber() {
     this.throbber_container
       .animate([{ opacity: 0.5 }], {
-        duration: 1000
+        duration: 1000,
       })
       .finished.then(() => {
         this.throbber_container.style.opacity = 0.5;

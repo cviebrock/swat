@@ -14,25 +14,25 @@ require_once 'Demo.php';
  */
 class CalendarDemo extends Demo
 {
-	// {{{ public function buildDemoUI()
+    // {{{ public function buildDemoUI()
 
-	public function buildDemoUI(SwatUI $ui)
-	{
-		$flydown = $ui->getWidget('flydown');
-		$flydown->options = array(
-			new SwatOption(0, 'Apple'),
-			new SwatOption(1, 'Orange'),
-			new SwatOption(2, 'Banana'),
-			new SwatOption(3, 'Pear'),
-			new SwatOption(4, 'Pineapple'),
-			new SwatOption(5, 'Kiwi'),
-			new SwatOption(6, 'Tangerine'),
-			new SwatOption(7, 'Grapefruit'),
-			new SwatOption(8, 'Strawberry')
-		);
-	}
+    public function buildDemoUI(SwatUI $ui)
+    {
+        $flydown = $ui->getWidget('flydown');
+        $flydown->options = [
+            new SwatOption(0, 'Apple'),
+            new SwatOption(1, 'Orange'),
+            new SwatOption(2, 'Banana'),
+            new SwatOption(3, 'Pear'),
+            new SwatOption(4, 'Pineapple'),
+            new SwatOption(5, 'Kiwi'),
+            new SwatOption(6, 'Tangerine'),
+            new SwatOption(7, 'Grapefruit'),
+            new SwatOption(8, 'Strawberry'),
+        ];
+    }
 
-	// }}}
+    // }}}
 }
 
 ?>

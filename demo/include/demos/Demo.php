@@ -12,12 +12,12 @@
  */
 abstract class Demo
 {
-	/**
-	 * Sets up the demo ui for this particular demo
-	 *
-	 * @param SwatUI $ui the UI that is to be setup.
-	 */
-	abstract public function buildDemoUI(SwatUI $ui);
+    /**
+     * Sets up the demo ui for this particular demo
+     *
+     * @param SwatUI $ui the UI that is to be setup.
+     */
+    abstract public function buildDemoUI(SwatUI $ui);
 }
 
 ?>

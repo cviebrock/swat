@@ -14,22 +14,22 @@ require_once 'Demo.php';
  */
 class ButtonDemo extends Demo
 {
-	// {{{ public function buildDemoUI()
+    // {{{ public function buildDemoUI()
 
-	public function buildDemoUI(SwatUI $ui)
-	{
-		$submit  = $ui->getWidget('submit_throbber_button');
-		$confirm = $ui->getWidget('confirm_throbber_button');
+    public function buildDemoUI(SwatUI $ui)
+    {
+        $submit = $ui->getWidget('submit_throbber_button');
+        $confirm = $ui->getWidget('confirm_throbber_button');
 
-		$submit->process();
-		$confirm->process();
+        $submit->process();
+        $confirm->process();
 
-		if ($submit->hasBeenClicked() || $confirm->hasBeenClicked()) {
-			sleep(2);
-		}
-	}
+        if ($submit->hasBeenClicked() || $confirm->hasBeenClicked()) {
+            sleep(2);
+        }
+    }
 
-	// }}}
+    // }}}
 }
 
 ?>

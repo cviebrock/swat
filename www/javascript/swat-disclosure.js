@@ -94,7 +94,7 @@ class SwatDisclosure {
       this.anchor.classList.add('swat-disclosure-anchor-closed');
     }
 
-    this.anchor.addEventListener('click', e => {
+    this.anchor.addEventListener('click', (e) => {
       e.preventDefault();
       this.toggle();
     });
@@ -133,7 +133,7 @@ class SwatDisclosure {
         [{ height: this.animate_div.offsetHeight + 'px' }, { height: 0 }],
         {
           duration: 250,
-          easing: 'ease-out'
+          easing: 'ease-out',
         }
       )
       .finished.then(() => {
@@ -184,7 +184,7 @@ class SwatDisclosure {
     this.animate_div
       .animate([{ height: 0 }, { height: height + 'px' }], {
         duration: 500,
-        easing: 'ease-out'
+        easing: 'ease-out',
       })
       .finished.then(() => {
         this.handleOpen();

@@ -66,7 +66,7 @@ class SwatMessageDisplayMessage {
       this.message_div
         .animate([{ opacity: 1 }, { opacity: 0 }], {
           duration: SwatMessageDisplayMessage.fade_duration * 1000,
-          easing: 'ease-out'
+          easing: 'ease-out',
         })
         .finished.then(() => {
           this.message_div.style.opacity = 0;
@@ -81,11 +81,11 @@ class SwatMessageDisplayMessage {
 
     var endKeyframeAttributes = {
       height: 0,
-      marginBottom: 0
+      marginBottom: 0,
     };
 
-    var height = this.message_div.firstElementChild.getBoundingClientRect()
-      .height;
+    var height =
+      this.message_div.firstElementChild.getBoundingClientRect().height;
 
     // collapse margins
     if (this.message_div.nextSibling) {
@@ -93,7 +93,7 @@ class SwatMessageDisplayMessage {
       this.message_div.nextSibling
         .animate([{ marginTop: 0 }], {
           duration,
-          easing
+          easing,
         })
         .finished.then(() => {
           this.message_div.nextSibling.style.marginTop = 0;
@@ -111,7 +111,7 @@ class SwatMessageDisplayMessage {
         node
           .animate([{ marginTop: 0 }], {
             duration,
-            easing
+            easing,
           })
           .finished.then(() => {
             node.style.marginTop = 0;
@@ -128,7 +128,7 @@ class SwatMessageDisplayMessage {
       this.message_div.parentNode
         .animate([{ marginTop: 0 }], {
           duration,
-          easing
+          easing,
         })
         .finished.then(() => {
           this.message_div.parentNode.style.marginTop = 0;
@@ -139,7 +139,7 @@ class SwatMessageDisplayMessage {
     this.message_div
       .animate([{ height: height + 'px' }, endKeyframeAttributes], {
         duration,
-        easing
+        easing,
       })
       .finished.then(() => {
         Object.entries(endKeyframeAttributes).forEach(([key, value]) => {

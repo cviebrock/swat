@@ -47,7 +47,7 @@ class SwatAccordion {
       }
 
       var that = this;
-      (function() {
+      (function () {
         var the_page = page;
         page.toggleLink.addEventListener('click', () => {
           if (!that.always_open && the_page === that.current_page) {
@@ -129,11 +129,11 @@ class SwatAccordion {
         .animate(
           [
             { height: old_from_height + 'px' },
-            { height: old_to_height + 'px' }
+            { height: old_to_height + 'px' },
           ],
           {
             duration: SwatAccordion.resize_period * 1000,
-            easing: 'ease-in-out'
+            easing: 'ease-in-out',
           }
         )
         .finished.then(() => {
@@ -168,11 +168,11 @@ class SwatAccordion {
         .animate(
           [
             { height: new_from_height + 'px' },
-            { height: new_to_height + 'px' }
+            { height: new_to_height + 'px' },
           ],
           {
             duration: SwatAccordion.resize_period * 1000,
-            easing: 'ease-in-out'
+            easing: 'ease-in-out',
           }
         )
         .finished.then(() => {

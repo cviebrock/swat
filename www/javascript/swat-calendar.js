@@ -83,7 +83,7 @@ class SwatCalendar {
     'Sep',
     'Oct',
     'Nov',
-    'Dec'
+    'Dec',
   ];
 
   static prev_alt_text = 'Previous Month';
@@ -105,7 +105,7 @@ class SwatCalendar {
     effect.attrIn = {
       attributes: { opacity: { from: 0, to: 1 } },
       duration: 0,
-      method: YAHOO.util.Easing.easeIn
+      method: YAHOO.util.Easing.easeIn,
     };
     effect.init();
     return effect;
@@ -181,8 +181,8 @@ class SwatCalendar {
       constraintoviewport: true,
       effect: {
         effect: SwatCalendar.Effect,
-        duration: 0.25
-      }
+        duration: 0.25,
+      },
     });
 
     document.getElementById(this.id + '_div').style.display = 'block';
@@ -263,7 +263,7 @@ class SwatCalendar {
     this.toggle_button.href = '#';
     this.toggle_button.title = SwatCalendar.open_toggle_text;
     this.toggle_button.classList.add('swat-calendar-toggle-button');
-    this.toggle_button.addEventListener('click', e => {
+    this.toggle_button.addEventListener('click', (e) => {
       e.preventDefault();
       this.toggle();
     });
@@ -943,7 +943,7 @@ class SwatCalendar {
         this.overlay.cfg.setProperty('context', [
           this.toggle_button,
           'tl',
-          'bl'
+          'bl',
         ]);
 
         this.positioned = true;
