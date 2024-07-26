@@ -12,6 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 *.swp
 .idea
+phpstan.neon
 
 # dependency lock file
 composer.lock
