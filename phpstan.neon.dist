@@ -1,6 +1,7 @@
 parameters:
-	level: 0
-	paths:
-		- Swat
-		- SwatDB
-		- SwatI18N
+    level: 0
+    errorFormat: table
+    paths:
+      - Swat
+      - SwatDB
+      - SwatI18N
