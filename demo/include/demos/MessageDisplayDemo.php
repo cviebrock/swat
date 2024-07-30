@@ -3,16 +3,13 @@
 require_once 'Demo.php';
 
 /**
- * A demo using a message display
+ * A demo using a message display.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class MessageDisplayDemo extends Demo
 {
-    // {{{ public function buildDemoUI()
-
     public function buildDemoUI(SwatUI $ui)
     {
         $short_message_display = $ui->getWidget('short_message_display');
@@ -73,8 +70,4 @@ class MessageDisplayDemo extends Demo
         $message->secondary_content = 'This message has secondary content.';
         $long_message_display->add($message);
     }
-
-    // }}}
 }
-
-?>

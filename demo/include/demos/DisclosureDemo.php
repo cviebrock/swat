@@ -3,16 +3,13 @@
 require_once 'Demo.php';
 
 /**
- * A demo using disclosures
+ * A demo using disclosures.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class DisclosureDemo extends Demo
 {
-    // {{{ public function buildDemoUI()
-
     public function buildDemoUI(SwatUI $ui)
     {
         $radiolist = $ui->getWidget('radio_list');
@@ -29,7 +26,7 @@ class DisclosureDemo extends Demo
         ]);
 
         $message = new SwatMessage(
-            'Both disclosure types support ' . 'progressive enhancement.',
+            'Both disclosure types support progressive enhancement.',
         );
 
         $message->secondary_content =
@@ -38,8 +35,4 @@ class DisclosureDemo extends Demo
 
         $ui->getWidget('note')->add($message, SwatMessageDisplay::DISMISS_OFF);
     }
-
-    // }}}
 }
-
-?>

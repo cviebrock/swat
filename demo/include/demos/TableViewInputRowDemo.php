@@ -3,16 +3,13 @@
 require_once 'Demo.php';
 
 /**
- * A demo using a table view
+ * A demo using a table view.
  *
- * @package   SwatDemo
  * @copyright 2006-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class TableViewInputRowDemo extends Demo
 {
-    // {{{ public function buildDemoUI();
-
     public function buildDemoUI(SwatUI $ui)
     {
         $message = new SwatMessage(
@@ -45,26 +42,17 @@ class TableViewInputRowDemo extends Demo
 
         $table_view->model = $table_store;
     }
-
-    // }}}
 }
 
 /**
- * A demo using a table view
+ * A demo using a table view.
  *
- * @package   SwatDemo
  * @copyright 2006-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class FruitObject
 {
-    // {{{ public properties
-
     public $title = '';
     public $makes_jam = false;
     public $makes_pie = false;
-
-    // }}}
 }
-
-?>

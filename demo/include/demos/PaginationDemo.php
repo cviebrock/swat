@@ -3,16 +3,13 @@
 require_once 'Demo.php';
 
 /**
- * A demo using pagination widgets
+ * A demo using pagination widgets.
  *
- * @package   SwatDemo
  * @copyright 2006-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class PaginationDemo extends Demo
 {
-    // {{{ public function buildDemoUI()
-
     public function buildDemoUI(SwatUI $ui)
     {
         $ui->getWidget('medium')->setCurrentPage(4);
@@ -23,8 +20,4 @@ class PaginationDemo extends Demo
 
         $ui->getWidget('small')->setCurrentPage(50);
     }
-
-    // }}}
 }
-
-?>

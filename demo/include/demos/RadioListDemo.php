@@ -3,16 +3,13 @@
 require_once 'Demo.php';
 
 /**
- * A demo using a radiolist
+ * A demo using a radiolist.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class RadioListDemo extends Demo
 {
-    // {{{ public function buildDemoUI()
-
     public function buildDemoUI(SwatUI $ui)
     {
         $radiolist = $ui->getWidget('radiolist');
@@ -75,8 +72,4 @@ class RadioListDemo extends Demo
         $radiotable->addDivider();
         $radiotable->addOption(new SwatOption(9, 'I don\'t like fruit'));
     }
-
-    // }}}
 }
-
-?>

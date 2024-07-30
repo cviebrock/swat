@@ -3,20 +3,17 @@
 require_once 'Demo.php';
 
 /**
- * A demo using flydowns
+ * A demo using flydowns.
  *
  * This demo sets up the various flydown widgets. All flydown widgets currently
  * must be set up manually as they contain SwatFlyDown options rather than
  * an array.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class FlydownDemo extends Demo
 {
-    // {{{ public function buildDemoUI()
-
     public function buildDemoUI(SwatUI $ui)
     {
         $flydown = $ui->getWidget('flydown');
@@ -137,8 +134,4 @@ class FlydownDemo extends Demo
             ],
         ];
     }
-
-    // }}}
 }
-
-?>

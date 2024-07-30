@@ -12,6 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 *.swp
 .idea
+.php-cs-fixer.cache
 phpstan.neon
 
 # dependency lock file

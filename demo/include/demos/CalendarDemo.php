@@ -3,19 +3,16 @@
 require_once 'Demo.php';
 
 /**
- * A demo using a calendar
+ * A demo using a calendar.
  *
  * This demo sets up a flydown widget to demonstrate how SwatCalendar handles
  * displaying a pop-up over a select list in IE6.
  *
- * @package   SwatDemo
  * @copyright 2007-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class CalendarDemo extends Demo
 {
-    // {{{ public function buildDemoUI()
-
     public function buildDemoUI(SwatUI $ui)
     {
         $flydown = $ui->getWidget('flydown');
@@ -31,8 +28,4 @@ class CalendarDemo extends Demo
             new SwatOption(8, 'Strawberry'),
         ];
     }
-
-    // }}}
 }
-
-?>

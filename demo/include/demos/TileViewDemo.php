@@ -3,16 +3,13 @@
 require_once 'Demo.php';
 
 /**
- * A demo using a tile view
+ * A demo using a tile view.
  *
- * @package   SwatDemo
  * @copyright 2007-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class TileViewDemo extends Demo
 {
-    // {{{ public function buildDemoUI();
-
     public function buildDemoUI(SwatUI $ui)
     {
         $data = [
@@ -105,21 +102,16 @@ class TileViewDemo extends Demo
 
         $tile_view->model = $table_store;
     }
-
-    // }}}
 }
 
 /**
- * A demo using a tile view
+ * A demo using a tile view.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class FruitObject
 {
-    // {{{ public properties
-
     public $image = '';
     public $image_width = 0;
     public $image_height = 0;
@@ -127,10 +119,6 @@ class FruitObject
     public $color = '';
     public $makes_jam = false;
     public $makes_pie = false;
-    public $harvest_date = null;
+    public $harvest_date;
     public $cost = 0;
-
-    // }}}
 }
-
-?>

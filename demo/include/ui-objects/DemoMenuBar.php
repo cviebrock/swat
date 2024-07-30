@@ -1,24 +1,18 @@
 <?php
 
 /**
- * The menu for the Swat Demo Application
+ * The menu for the Swat Demo Application.
  *
  * This is a simple menu that takes a flat array of titles and links and
  * displays them in an unordered list.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class DemoMenuBar extends SwatControl
 {
-    // {{{ protected properties
-
     protected $entries = [];
     protected $selected_entry;
-
-    // }}}
-    // {{{ public function display()
 
     public function display()
     {
@@ -55,23 +49,13 @@ class DemoMenuBar extends SwatControl
         $ul_tag->close();
     }
 
-    // }}}
-    // {{{ public function setEntries()
-
     public function setEntries(array $entries)
     {
         $this->entries = $entries;
     }
 
-    // }}}
-    // {{{ public function setSelectedEntry()
-
     public function setSelectedEntry($entry)
     {
         $this->selected_entry = $entry;
     }
-
-    // }}}
 }
-
-?>

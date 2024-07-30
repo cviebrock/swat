@@ -43,6 +43,13 @@
       "only": [
         "silverorange/*"
       ]
+    },
+    {
+      "type": "path",
+      "url": "/Users/cmv/Sites/packages/php-coding-tools",
+      "only": [
+        "silverorange/php-coding-tools"
+      ]
     }
   ],
   "require": {
@@ -53,13 +60,17 @@
     "ext-mbstring": "*",
     "ext-pcre": "*",
     "pear/pear_exception": "^1.0.0",
-    "silverorange/mdb2": "^3.1.1",
     "silverorange/concentrate": "^2.0.0",
+    "silverorange/mdb2": "^3.1.1",
     "silverorange/yui": "^1.0.11"
   },
   "require-dev": {
-    "silverorange/coding-standard": "^1.1.0",
-    "phpstan/phpstan": "^1.11"
+    "friendsofphp/php-cs-fixer": "^3.60",
+    "phpstan/phpstan": "^1.11",
+    "silverorange/php-coding-tools": "@dev"
+  },
+  "suggest": {
+    "ext-gettext": "For multilingual features"
   },
   "autoload": {
     "classmap": [
@@ -69,9 +80,12 @@
     ]
   },
   "scripts": {
-    "lint": "./vendor/bin/phpcs",
-    "analyze": "./vendor/bin/phpstan analyze",
-    "post-install-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/silverorange/coding-standard/src",
-    "post-update-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/silverorange/coding-standard/src"
+    "phpcs": "./vendor/bin/php-cs-fixer check -v",
+    "phpcs:fix": "./vendor/bin/php-cs-fixer fix -v",
+    "phpstan": "./vendor/bin/phpstan analyze"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
   }
 }

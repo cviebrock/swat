@@ -3,19 +3,16 @@
 require_once 'Demo.php';
 
 /**
- * Several SwatString tests
+ * Several SwatString tests.
  *
  * This tests the various static methods of SwatString and displays the test
  * results in a SwatContentBlock.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class StringDemo extends Demo
 {
-    // {{{ private properties
-
     private $strings = [
         'Suspendisse potenti. Cras varius diam. Fusce mollis pharetra sapien. Curabitur vel tellus vel nisi luctus tempus.',
         'Nullam consequat metus porttitor libero. Integer rhoncus. Phasellus tortor.',
@@ -32,9 +29,6 @@ class StringDemo extends Demo
     private $text_blocks = [];
 
     private $unformatted_text_blocks = [];
-
-    // }}}
-    // {{{ public function buildDemoUI()
 
     public function buildDemoUI(SwatUI $ui)
     {
@@ -86,9 +80,6 @@ class StringDemo extends Demo
         $to_xhtml->content = ob_get_clean();
     }
 
-    // }}}
-    // {{{ protected function createLayout()
-
     protected function createLayout()
     {
         return new SiteLayout(
@@ -96,9 +87,6 @@ class StringDemo extends Demo
             '../include/layouts/xhtml/no-source.php',
         );
     }
-
-    // }}}
-    // {{{ private function testEllipsizeRight()
 
     private function testEllipsizeRight($length = 20)
     {
@@ -114,9 +102,6 @@ class StringDemo extends Demo
         echo '</ol>';
     }
 
-    // }}}
-    // {{{ private function testEllipsizeMIddle()
-
     private function testEllipsizeMiddle($length = 20)
     {
         echo '<ol class="string-demo">';
@@ -131,9 +116,6 @@ class StringDemo extends Demo
         echo '</ol>';
     }
 
-    // }}}
-    // {{{ private function testCondense()
-
     private function testCondense()
     {
         foreach ($this->text_blocks as $text_block) {
@@ -146,9 +128,6 @@ class StringDemo extends Demo
             echo '<div class="text-block">' . $condensed_text_block . '</div>';
         }
     }
-
-    // }}}
-    // {{{ private function testCondenseToName()
 
     private function testCondenseToName()
     {
@@ -163,9 +142,6 @@ class StringDemo extends Demo
         }
         echo '</ol>';
     }
-
-    // }}}
-    // {{{ private function testToXHTML()
 
     private function testToXHTML()
     {
@@ -185,8 +161,4 @@ class StringDemo extends Demo
                 '</div>';
         }
     }
-
-    // }}}
 }
-
-?>

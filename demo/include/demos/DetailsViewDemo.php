@@ -3,16 +3,13 @@
 require_once 'Demo.php';
 
 /**
- * A demo using a details view
+ * A demo using a details view.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class DetailsViewDemo extends Demo
 {
-    // {{{ public function buildDemoUI()
-
     public function buildDemoUI(SwatUI $ui)
     {
         $details_view = $ui->getWidget('details_view');
@@ -39,21 +36,16 @@ class DetailsViewDemo extends Demo
 
         $details_view->data = $fruit;
     }
-
-    // }}}
 }
 
 /**
- * An object to display in the Swat details view demo
+ * An object to display in the Swat details view demo.
  *
- * @package   SwatDemo
  * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class FruitObject
 {
-    // {{{ public properties
-
     public $align = '';
     public $image = '';
     public $image_width = 0;
@@ -62,11 +54,7 @@ class FruitObject
     public $color = '';
     public $makes_jam = false;
     public $makes_pie = false;
-    public $harvest_date = null;
+    public $harvest_date;
     public $cost = 0;
     public $text = '';
-
-    // }}}
 }
-
-?>

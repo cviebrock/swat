@@ -2,11 +2,10 @@
 
 /**
  * Removes PHP string concatenations inside gettext markers given a PHP source
- * file
+ * file.
  *
  * @copyright 2006-2016 silverorange
  */
-
 $source = file_get_contents($_SERVER['argv'][1]);
 
 $output = '';
@@ -26,7 +25,8 @@ for ($i = 0; $i < count($tokens); $i++) {
                 }
 
                 break;
-            // for ngettext multiple translations
+
+                // for ngettext multiple translations
             case ',':
                 if ($in_gettext_string) {
                     $output .= "', ";
@@ -35,8 +35,9 @@ for ($i = 0; $i < count($tokens); $i++) {
                     $output .= $token;
                 }
                 break;
-            // TODO: this can catch ngettext('string1', 'string2', count($foo))
-            //                              ^                                ^
+
+                // TODO: this can catch ngettext('string1', 'string2', count($foo))
+                //                              ^                                ^
             case ')':
                 if ($in_gettext) {
                     if ($in_gettext_string) {
@@ -52,6 +53,7 @@ for ($i = 0; $i < count($tokens); $i++) {
                 }
 
                 break;
+
             default:
                 $output .= $token;
                 break;
@@ -69,12 +71,13 @@ for ($i = 0; $i < count($tokens); $i++) {
                     $output .= $text;
                 }
                 break;
+
             case T_STRING:
                 $output .= $text;
                 if (
-                    $text === '_' ||
-                    $text === 'ngettext' ||
-                    $text === 'gettext'
+                    $text === '_'
+                    || $text === 'ngettext'
+                    || $text === 'gettext'
                 ) {
                     if ($in_gettext) {
                         echo 'error: gettext marker detected inside gettext ' .
@@ -90,6 +93,7 @@ for ($i = 0; $i < count($tokens); $i++) {
                     }
                 }
                 break;
+
             case T_CONSTANT_ENCAPSED_STRING:
                 if ($in_gettext) {
                     if (!$in_gettext_string) {
@@ -114,6 +118,7 @@ for ($i = 0; $i < count($tokens); $i++) {
                     $output .= $text;
                 }
                 break;
+
             default:
                 $output .= $text;
                 break;
@@ -122,5 +127,3 @@ for ($i = 0; $i < count($tokens); $i++) {
 }
 
 echo $output;
-
-?>

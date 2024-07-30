@@ -38,18 +38,18 @@ pipeline {
             }
         }
 
-        stage('Lint Entire Project') {
+        stage('Check PHP code style') {
             when {
                 branch 'master'
             }
             steps {
-                sh './vendor/bin/phpcs'
+                sh 'composer run phpcs'
             }
         }
 
-        stage('Check if Pretty') {
+        stage('Check if pretty') {
             steps {
-                sh 'yarn prettier'
+                sh 'yarn run prettier'
             }
         }
     }

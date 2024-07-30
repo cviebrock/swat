@@ -14,5 +14,3 @@ try {
 } catch (SwatException $exception) {
     $exception->process(false);
 }
-
-?>

@@ -1,7 +1,14 @@
+# Project configuration for phpstan static analysis.
+#
+# See https://phpstan.org/config-reference for all options
+
 parameters:
-    level: 0
-    errorFormat: table
-    paths:
-      - Swat
-      - SwatDB
-      - SwatI18N
+  # Change this to the appropriate level for your project
+  level: 0
+  errorFormat: table
+  # Set the paths to the PHP code you want to analyze
+  paths:
+    - Swat
+    - SwatDB
+    - SwatI18N
+
