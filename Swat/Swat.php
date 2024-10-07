@@ -159,10 +159,10 @@ class Swat
     public static function displayInlineJavaScript($javascript)
     {
         if ($javascript != '') {
-            echo '<script type="text/javascript">',
-            "\n//<![CDATA[\n",
-            rtrim($javascript),
-            "\n//]]>\n</script>";
+            echo '<script type="text/javascript">' .
+                "\n//<![CDATA[\n" .
+                rtrim($javascript) .
+                "\n//]]>\n</script>";
         }
     }
 
