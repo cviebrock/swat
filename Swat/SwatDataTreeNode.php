@@ -13,7 +13,7 @@ class SwatDataTreeNode extends SwatTreeNode
      *
      * The value is used for processing. It is either a string or an integer.
      *
-     * @var string|int
+     * @var int|string
      */
     public $value;
 
@@ -47,7 +47,7 @@ class SwatDataTreeNode extends SwatTreeNode
     /**
      * Creates a new data node.
      *
-     * @param string|int $value        the value of the node. It is either a
+     * @param int|string $value        the value of the node. It is either a
      *                                 string or an integer.
      * @param string     $title        the title of the node
      * @param string     $content_type optional content-type

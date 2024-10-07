@@ -605,11 +605,11 @@ class SwatFileEntry extends SwatInputControl
             $size = mb_strtoupper(mb_substr($ini_value, -1));
             $value = (int) mb_substr($ini_value, 0, -1);
             $value *= match ($size) {
-                'P' => 1024 ** 5,
-                'T' => 1024 ** 4,
-                'G' => 1024 ** 3,
-                'M' => 1024 ** 2,
-                'K' => 1024,
+                'P'     => 1024 ** 5,
+                'T'     => 1024 ** 4,
+                'G'     => 1024 ** 3,
+                'M'     => 1024 ** 2,
+                'K'     => 1024,
                 default => 1,
             };
         }

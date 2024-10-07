@@ -1005,7 +1005,6 @@ class SwatForm extends SwatDisplayableContainer
             ['\\\\', '\x00', '\x0a', '\x0d'],
             $value
         );
-
     }
 
     /**
