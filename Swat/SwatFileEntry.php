@@ -604,29 +604,14 @@ class SwatFileEntry extends SwatInputControl
         } else {
             $size = mb_strtoupper(mb_substr($ini_value, -1));
             $value = (int) mb_substr($ini_value, 0, -1);
-
-            // No breaks on purpose. We want the values to fall through.
-            switch ($size) {
-                case 'P':
-                    $value *= 1024;
-                    // no break
-
-                case 'T':
-                    $value *= 1024;
-                    // no break
-
-                case 'G':
-                    $value *= 1024;
-                    // no break
-
-                case 'M':
-                    $value *= 1024;
-                    // no break
-
-                case 'K':
-                    $value *= 1024;
-                    break;
-            }
+            $value *= match ($size) {
+                'P' => 1024 ** 5,
+                'T' => 1024 ** 4,
+                'G' => 1024 ** 3,
+                'M' => 1024 ** 2,
+                'K' => 1024,
+                default => 1,
+            };
         }
 
         return $value;
