@@ -17,6 +17,8 @@ $config->setCustomRules([
     'return_assignment' => false,
     // don't try and fit classes with several interfaces onto one line
     'class_definition' => ['single_line' => false],
+    // Use postfix incrementation operators.
+    'increment_style' => ['style' => 'post'],
 ]);
 
 // Set up the directories you want to process
