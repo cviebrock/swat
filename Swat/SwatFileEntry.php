@@ -55,9 +55,9 @@ class SwatFileEntry extends SwatInputControl
     /**
      * Access key.
      *
-     * Access key for this file entry control, for keyboard nagivation.
+     * Access key for this file entry control, for keyboard navigation.
      *
-     * @var string
+     * @var ?string
      */
     public $access_key;
 
@@ -69,7 +69,7 @@ class SwatFileEntry extends SwatInputControl
      * of 0 or null will use the position of the input tag in the XHTML
      * character stream to determine tab order.
      *
-     * @var int
+     * @var ?int
      */
     public $tab_index;
 

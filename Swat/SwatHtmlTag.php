@@ -17,7 +17,7 @@ class SwatHtmlTag extends SwatObject
     private $tag_name;
 
     /**
-     * Atribute array.
+     * Attribute array.
      *
      * Array containing attributes of the HTML tag in the form:
      *    attribute_name => value
