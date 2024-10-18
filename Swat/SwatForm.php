@@ -1000,12 +1000,11 @@ class SwatForm extends SwatDisplayableContainer
 
         // escape special characters that confuse browsers (mostly IE;
         // null characters confuse all browsers)
-        $value = str_replace('\\', '\\\\', $value);
-        $value = str_replace("\x00", '\x00', $value);
-        $value = str_replace("\x0a", '\x0a', $value);
-        $value = str_replace("\x0d", '\x0d', $value);
-
-        return $value;
+        return str_replace(
+            ['\\', "\x00", "\x0a", "\x0d"],
+            ['\\\\', '\x00', '\x0a', '\x0d'],
+            $value
+        );
     }
 
     /**

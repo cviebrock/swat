@@ -15,10 +15,10 @@ $config = new Php82();
 $config->setCustomRules([
     // don't simplify returns automatically; sometimes it makes it less readable
     'return_assignment' => false,
-    // don't mess with backslashes in any strings
-    'string_implicit_backslashes' => false,
     // don't try and fit classes with several interfaces onto one line
     'class_definition' => ['single_line' => false],
+    // Use postfix incrementation operators.
+    'increment_style' => ['style' => 'post'],
 ]);
 
 // Set up the directories you want to process

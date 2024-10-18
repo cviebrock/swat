@@ -217,7 +217,7 @@ class SwatSimpleColorEntry extends SwatAbstractOverlay
     /**
      * Get the name of the JavaScript class for this widget.
      *
-     * @return string javaScript class name
+     * @return string the JavaScript class name
      */
     protected function getJavaScriptClassName()
     {

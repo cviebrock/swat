@@ -55,9 +55,9 @@ class SwatFileEntry extends SwatInputControl
     /**
      * Access key.
      *
-     * Access key for this file entry control, for keyboard nagivation.
+     * Access key for this file entry control, for keyboard navigation.
      *
-     * @var string
+     * @var ?string
      */
     public $access_key;
 
@@ -69,7 +69,7 @@ class SwatFileEntry extends SwatInputControl
      * of 0 or null will use the position of the input tag in the XHTML
      * character stream to determine tab order.
      *
-     * @var int
+     * @var ?int
      */
     public $tab_index;
 
@@ -604,29 +604,14 @@ class SwatFileEntry extends SwatInputControl
         } else {
             $size = mb_strtoupper(mb_substr($ini_value, -1));
             $value = (int) mb_substr($ini_value, 0, -1);
-
-            // No breaks on purpose. We want the values to fall through.
-            switch ($size) {
-                case 'P':
-                    $value *= 1024;
-                    // no break
-
-                case 'T':
-                    $value *= 1024;
-                    // no break
-
-                case 'G':
-                    $value *= 1024;
-                    // no break
-
-                case 'M':
-                    $value *= 1024;
-                    // no break
-
-                case 'K':
-                    $value *= 1024;
-                    break;
-            }
+            $value *= match ($size) {
+                'P'     => 1024 ** 5,
+                'T'     => 1024 ** 4,
+                'G'     => 1024 ** 3,
+                'M'     => 1024 ** 2,
+                'K'     => 1024,
+                default => 1,
+            };
         }
 
         return $value;
