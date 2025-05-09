@@ -13,7 +13,7 @@ class SwatEntry extends SwatInputControl implements SwatState
      *
      * Text content of the widget, or null.
      *
-     * @var string
+     * @var ?string
      */
     public $value;
 
@@ -22,7 +22,7 @@ class SwatEntry extends SwatInputControl implements SwatState
      *
      * Size in characters of the HTML text form input, or null.
      *
-     * @var int
+     * @var ?int
      */
     public $size = 50;
 
@@ -31,16 +31,16 @@ class SwatEntry extends SwatInputControl implements SwatState
      *
      * Maximum number of allowable characters in HTML text form input, or null.
      *
-     * @var int
+     * @var ?int
      */
     public $maxlength;
 
     /**
      * Access key.
      *
-     * Access key for this form input, for keyboard nagivation.
+     * Access key for this form input, for keyboard navigation.
      *
-     * @var string
+     * @var ?string
      */
     public $access_key;
 
@@ -49,7 +49,7 @@ class SwatEntry extends SwatInputControl implements SwatState
      *
      * Minimum number of allowable characters in HTML text form input, or null.
      *
-     * @var int
+     * @var ?int
      */
     public $minlength;
 
@@ -61,7 +61,7 @@ class SwatEntry extends SwatInputControl implements SwatState
      * of 0 or null will use the position of the input tag in the XHTML
      * character stream to determine tab order.
      *
-     * @var int
+     * @var ?int
      */
     public $tab_index;
 
@@ -87,7 +87,7 @@ class SwatEntry extends SwatInputControl implements SwatState
     /**
      * Some text hinting to the user what should be entered in this entry.
      *
-     * @var string
+     * @var ?string
      */
     public $placeholder;
 
@@ -112,7 +112,7 @@ class SwatEntry extends SwatInputControl implements SwatState
      * If autocomplete is turned off, this nonce is used to obfuscate the
      * name of the XHTML input tag.
      *
-     * @var string
+     * @var ?string
      */
     protected $nonce;
 

@@ -671,7 +671,6 @@ class SwatDateEntry extends SwatInputControl implements SwatState
         }
 
         $range_end = clone $this->valid_range_end;
-        $difference = $this->valid_range_start->diff($range_end);
 
         // Subtract a second from the end date. This makes comparison correct,
         // and prevents displaying extra months. The difference needs to happen
@@ -763,7 +762,7 @@ class SwatDateEntry extends SwatInputControl implements SwatState
             for ($i = $start_day; $i <= $end_day; $i++) {
                 $flydown->addOption($i, $i);
             }
-        } elseif (SwatDate::compare($end_check, $range_end) != -1) {
+        } elseif (SwatDate::compare($end_check, $range_end) !== -1) {
             // extra days at the beginning of the next month allowed
             $days_in_month = $this->valid_range_start->getDaysInMonth();
 
