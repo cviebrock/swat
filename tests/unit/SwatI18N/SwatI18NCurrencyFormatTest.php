@@ -6,14 +6,14 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[CoversClass(SwatI18NNumberFormat::class)]
-class SwatI18NNumberFormatTest extends TestCase
+#[CoversClass(SwatI18NCurrencyFormat::class)]
+class SwatI18NCurrencyFormatTest extends TestCase
 {
-    protected SwatI18NNumberFormat $format;
+    protected SwatI18NCurrencyFormat $format;
 
     public function setUp(): void
     {
-        $this->format = new SwatI18NNumberFormat();
+        $this->format = new SwatI18NCurrencyFormat();
         $this->format->decimal_separator = '.';
         $this->format->thousands_separator = ',';
         $this->format->grouping = [3];
@@ -24,31 +24,27 @@ class SwatI18NNumberFormatTest extends TestCase
         $newFormat = $this->format->override([
             'decimal_separator'   => ',',
             'thousands_separator' => '.',
+            'grouping'            => [],
+            'symbol'              => '$',
+            'p_sign'              => '+',
         ]);
 
         $this->assertNotSame($this->format, $newFormat);
         $this->assertEquals(',', $newFormat->decimal_separator);
         $this->assertEquals('.', $newFormat->thousands_separator);
-        $this->assertEquals(
-            [3],
-            $newFormat->grouping
-        );
-    }
-
-    public function testOverrideInvalidPropertyThrowsException()
-    {
-        $this->expectException(SwatException::class);
-        $this->format->override(['invalid_property' => 'value']);
+        $this->assertEquals([], $newFormat->grouping);
+        $this->assertEquals('$', $newFormat->symbol);
+        $this->assertEquals('+', $newFormat->p_sign);
     }
 
     public function testOverrideNullValueDoesNotChangeProperty()
     {
         $newFormat = $this->format->override([
-            'decimal_separator' => null,
+            'p_sign_position' => null,
         ]);
         $this->assertEquals(
-            '.',
-            $newFormat->decimal_separator
+            1,
+            $newFormat->p_sign_position
         );
     }
 }
