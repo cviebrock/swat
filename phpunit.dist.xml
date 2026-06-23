@@ -11,7 +11,7 @@
     </testsuites>
     <source>
         <include>
-            <directory suffix=".php">.</directory>
+            <directory suffix=".php">Swat</directory>
             <directory suffix=".php">SwatDB</directory>
             <directory suffix=".php">SwatI18N</directory>
         </include>
