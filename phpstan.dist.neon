@@ -1,11 +1,13 @@
 parameters:
+  phpVersion: 80200
   level: 1
   paths:
     - Swat
     - SwatDB
     - SwatI18N
-  editorUrl: '%%relFile%%:%%line%%'
-  editorUrlTitle: '%%relFile%%:%%line%%'
+  editorUrl: '%%relfile%%:%%line%%'
+  editorUrlTitle: '%%relfile%%:%%line%%'
+  errorFormat: table
 # Checks from higher levels that we want to include here
 # Level 2
   checkClassCaseSensitivity: true
