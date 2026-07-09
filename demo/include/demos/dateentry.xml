@@ -1,23 +1,29 @@
-<?xml version="1.0" standalone="no"?>
+<?xml version="1.0" standalone="no" ?>
 <!DOCTYPE swatml SYSTEM "http://swat.silverorange.com/swatml1.dtd">
 <swatml>
-	<widget class="SwatForm" id="my_form">
+    <widget class="SwatForm" id="my_form">
+        <widget class="SwatFormField">
+            <property name="title" type="string">
+                Date with a Calendar (default)
+            </property>
+            <widget class="SwatDateEntry" id="default_date" />
+        </widget>
 
-		<widget class="SwatFormField">
-			<property name="title" type="string">Date with a Calendar (default)</property>
-			<widget class="SwatDateEntry" id="default_date">
-			</widget>
-		</widget>
+        <widget class="SwatFormField">
+            <property name="title" type="string">
+                Date and Time with a Calendar
+            </property>
+            <widget class="SwatDateEntry" id="time_date">
+                <property name="display_parts" type="constant">
+                    YEAR|MONTH|DAY|TIME|CALENDAR
+                </property>
+            </widget>
 
-		<widget class="SwatFormField">
-			<property name="title" type="string">Date and Time with a Calendar</property>
-			<widget class="SwatDateEntry" id="time_date">
-				<property name="display_parts" type="constant">YEAR|MONTH|DAY|TIME|CALENDAR</property>
-			</widget>
-
-			<!-- sensitivity toggle -->
-			<widget class="SwatContentBlock">
-				<property name="content"><![CDATA[
+            <!-- sensitivity toggle -->
+            <widget class="SwatContentBlock">
+                <property
+                    name="content"
+                ><![CDATA[
 				<input type="button" id="sensitive" value="toggle sensitivity" style="font-size: 85%;" />
 				<script type="text/javascript">
 				sensitive = true;
@@ -27,25 +33,31 @@
 						time_date_obj.setSensitivity(sensitive);
 					});
 				</script>]]></property>
-				<property name="content_type">text/xml</property>
-			</widget>
-		</widget>
+                <property name="content_type">text/xml</property>
+            </widget>
+        </widget>
 
-		<widget class="SwatFormField">
-			<property name="title" type="string">Month and Day</property>
-			<widget class="SwatDateEntry" id="month_and_day">
-				<property name="display_parts" type="constant">MONTH|DAY</property>
-			</widget>
-		</widget>
+        <widget class="SwatFormField">
+            <property name="title" type="string">Month and Day</property>
+            <widget class="SwatDateEntry" id="month_and_day">
+                <property name="display_parts" type="constant">
+                    MONTH|DAY
+                </property>
+            </widget>
+        </widget>
 
-		<widget class="SwatFormField">
-			<property name="title" type="string">Creditcard Style</property>
-			<widget class="SwatDateEntry" id="cc_date">
-				<property name="display_parts" type="constant">YEAR|MONTH</property>
-				<property name="show_month_number" type="boolean">true</property>
-			</widget>
-		</widget>
+        <widget class="SwatFormField">
+            <property name="title" type="string">Creditcard Style</property>
+            <widget class="SwatDateEntry" id="cc_date">
+                <property name="display_parts" type="constant">
+                    YEAR|MONTH
+                </property>
+                <property name="show_month_number" type="boolean">
+                    true
+                </property>
+            </widget>
+        </widget>
 
-		<widget class="SwatButton" />
-	</widget>
+        <widget class="SwatButton" />
+    </widget>
 </swatml>
