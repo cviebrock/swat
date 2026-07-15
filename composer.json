@@ -1,14 +1,13 @@
 {
   "name": "silverorange/swat",
   "description": "Web application toolkit.",
+  "license": "LGPL-2.1",
   "type": "library",
   "keywords": [
     "swat",
     "toolkit",
     "widget"
   ],
-  "homepage": "https://github.com/silverorange.com/swat",
-  "license": "LGPL-2.1",
   "authors": [
     {
       "name": "Charles Waddell",
@@ -39,6 +38,7 @@
       "email": "colin@silverorange.com"
     }
   ],
+  "homepage": "https://github.com/silverorange.com/swat",
   "require": {
     "php": ">=8.2",
     "ext-dom": "*",
@@ -46,15 +46,16 @@
     "ext-intl": "*",
     "ext-mbstring": "*",
     "ext-pcre": "*",
-    "pear/pear_exception": "^1.0.0",
-    "silverorange/concentrate": "^2.0.0",
-    "silverorange/mdb2": "^3.1.2",
-    "silverorange/yui": "^1.0.11"
+    "pear/pear_exception": "^1.0.2",
+    "silverorange/concentrate": "^3.1.0",
+    "silverorange/mdb2": "^3.2.0",
+    "silverorange/yui": "^1.0.13"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "3.88.2",
     "phpstan/phpstan": "^2.2",
-    "phpunit/phpunit": "^11.5"
+    "phpunit/phpunit": "^11.5",
+    "rector/rector": "^2.4"
   },
   "autoload": {
     "classmap": [
@@ -68,17 +69,19 @@
       "tests/"
     ]
   },
+  "config": {
+    "sort-packages": true
+  },
   "scripts": {
     "phpcs": "./vendor/bin/php-cs-fixer check -v",
     "phpcs:ci": "./vendor/bin/php-cs-fixer check --config=.php-cs-fixer.php --no-interaction --show-progress=none --diff --using-cache=no -vvv",
     "phpcs:fix": "./vendor/bin/php-cs-fixer fix -v",
     "phpstan": "./vendor/bin/phpstan analyze",
-    "phpstan:ci": "./vendor/bin/phpstan analyze -vvv --no-progress --memory-limit 2G",
     "phpstan:baseline": "./vendor/bin/phpstan analyze --generate-baseline",
-    "phpunit": "./vendor/bin/phpunit --no-coverage",
-    "phpunit:coverage": "rm -rf ./build && XDEBUG_MODE=coverage ./vendor/bin/phpunit && npx serve build/coverage"
-  },
-  "config": {
-    "sort-packages": true
+    "phpstan:ci": "./vendor/bin/phpstan analyze -vvv --no-progress --memory-limit 2G",
+    "rector": "./vendor/bin/rector --dry-run",
+    "rector:fix": "./vendor/bin/rector",
+    "test": "./vendor/bin/phpunit --no-coverage",
+    "test:coverage": "rm -rf ./build && XDEBUG_MODE=coverage ./vendor/bin/phpunit && npx serve build/coverage"
   }
 }

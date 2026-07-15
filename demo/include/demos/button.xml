@@ -1,83 +1,111 @@
-<?xml version="1.0" standalone="no"?>
+<?xml version="1.0" standalone="no" ?>
 <!DOCTYPE swatml SYSTEM "http://swat.silverorange.com/swatml1.dtd">
 <swatml>
-	<widget class="SwatFrame">
-		<property name="title">Normal Buttons</property>
+    <widget class="SwatFrame">
+        <property name="title">Normal Buttons</property>
 
-		<widget class="SwatForm">
-			<widget class="SwatFormField">
-				<property name="title" type="string">Submit Button</property>
-				<widget class="SwatButton" id="submit_button">
-					<property name="title" type="string">Submit Button</property>
-				</widget>
-			</widget>
-		</widget>
+        <widget class="SwatForm">
+            <widget class="SwatFormField">
+                <property name="title" type="string">Submit Button</property>
+                <widget class="SwatButton" id="submit_button">
+                    <property name="title" type="string">
+                        Submit Button
+                    </property>
+                </widget>
+            </widget>
+        </widget>
 
-		<widget class="SwatForm">
-			<widget class="SwatFormField">
-				<property name="title" type="string">Confirm Button</property>
-				<widget class="SwatConfirmationButton" id="confirm_button">
-					<property name="title" type="string">Confirm Button</property>
-					<property name="confirmation_message" type="string">Are you sure you meant to press the button?</property>
-				</widget>
-			</widget>
-		</widget>
+        <widget class="SwatForm">
+            <widget class="SwatFormField">
+                <property name="title" type="string">Confirm Button</property>
+                <widget class="SwatConfirmationButton" id="confirm_button">
+                    <property name="title" type="string">
+                        Confirm Button
+                    </property>
+                    <property name="confirmation_message" type="string">
+                        Are you sure you meant to press the button?
+                    </property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+    <widget class="SwatFrame">
+        <property name="title">Throbber Buttons</property>
 
-	</widget>
-	<widget class="SwatFrame">
-		<property name="title">Throbber Buttons</property>
+        <widget class="SwatForm">
+            <widget class="SwatFormField">
+                <property name="title" type="string">Test Field</property>
+                <widget class="SwatEntry" />
+            </widget>
+            <widget class="SwatFormField">
+                <property name="title" type="string">Submit Button</property>
+                <widget class="SwatButton" id="submit_throbber_button">
+                    <property name="title" type="string">
+                        Submit Button
+                    </property>
+                    <property name="show_processing_throbber" type="boolean">
+                        true
+                    </property>
+                    <property name="processing_throbber_message">
+                        Loading ...
+                    </property>
+                </widget>
+            </widget>
+        </widget>
 
-		<widget class="SwatForm">
-			<widget class="SwatFormField">
-				<property name="title" type="string">Test Field</property>
-				<widget class="SwatEntry" />
-			</widget>
-			<widget class="SwatFormField">
-				<property name="title" type="string">Submit Button</property>
-				<widget class="SwatButton" id="submit_throbber_button">
-					<property name="title" type="string">Submit Button</property>
-					<property name="show_processing_throbber" type="boolean">true</property>
-					<property name="processing_throbber_message">Loading ...</property>
-				</widget>
-			</widget>
-		</widget>
+        <widget class="SwatForm">
+            <widget class="SwatFormField">
+                <property name="title" type="string">Confirm Button</property>
+                <widget
+                    class="SwatConfirmationButton"
+                    id="confirm_throbber_button"
+                >
+                    <property name="title" type="string">
+                        Confirm Button
+                    </property>
+                    <property name="confirmation_message" type="string">
+                        Are you sure you meant to press the button?
+                    </property>
+                    <property name="show_processing_throbber" type="boolean">
+                        true
+                    </property>
+                    <property name="processing_throbber_message">
+                        Please wait ...
+                    </property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+    <widget class="SwatFrame">
+        <property name="title">Image Buttons</property>
 
-		<widget class="SwatForm">
-			<widget class="SwatFormField">
-				<property name="title" type="string">Confirm Button</property>
-				<widget class="SwatConfirmationButton" id="confirm_throbber_button">
-					<property name="title" type="string">Confirm Button</property>
-					<property name="confirmation_message" type="string">Are you sure you meant to press the button?</property>
-					<property name="show_processing_throbber" type="boolean">true</property>
-					<property name="processing_throbber_message">Please wait ...</property>
-				</widget>
-			</widget>
-		</widget>
+        <widget class="SwatForm">
+            <widget class="SwatFormField">
+                <property name="title" type="string">Image Button</property>
+                <widget class="SwatImageButton" id="image_button">
+                    <property name="title" type="string">Image Button</property>
+                    <property name="alt" type="string">apple graphic</property>
+                    <property name="image" type="string">
+                        images/apple.png
+                    </property>
+                </widget>
+            </widget>
 
-	</widget>
-	<widget class="SwatFrame">
-		<property name="title">Image Buttons</property>
-
-		<widget class="SwatForm">
-			<widget class="SwatFormField">
-				<property name="title" type="string">Image Button</property>
-				<widget class="SwatImageButton" id="image_button">
-					<property name="title" type="string">Image Button</property>
-					<property name="alt" type="string">apple graphic</property>
-					<property name="image" type="string">images/apple.png</property>
-				</widget>
-			</widget>
-
-			<widget class="SwatFormField">
-				<property name="title" type="string">Insensitive Image Button</property>
-				<widget class="SwatImageButton" id="insensitive_image_button">
-					<property name="title" type="string">Insensitive Image Button</property>
-					<property name="alt" type="string">apple graphic</property>
-					<property name="image" type="string">images/apple.png</property>
-					<property name="sensitive" type="boolean">false</property>
-				</widget>
-			</widget>
-		</widget>
-
-	</widget>
+            <widget class="SwatFormField">
+                <property name="title" type="string">
+                    Insensitive Image Button
+                </property>
+                <widget class="SwatImageButton" id="insensitive_image_button">
+                    <property name="title" type="string">
+                        Insensitive Image Button
+                    </property>
+                    <property name="alt" type="string">apple graphic</property>
+                    <property name="image" type="string">
+                        images/apple.png
+                    </property>
+                    <property name="sensitive" type="boolean">false</property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
 </swatml>

@@ -1,55 +1,66 @@
-<?xml version="1.0" standalone="no"?>
+<?xml version="1.0" standalone="no" ?>
 <!DOCTYPE swatml SYSTEM "http://swat.silverorange.com/swatml1.dtd">
 <swatml>
-	<widget class="SwatForm">
-		<widget class="SwatFrame">
-			<property name="title">JavaScript Demos</property>
-			<widget class="SwatMessageDisplay" id="note" />
-			<widget class="SwatFormField">
-				<property name="title" type="string">Download Progress</property>
-				<widget class="SwatProgressBar" id="download_progress">
-					<property name="value" type="float">0</property>
-					<property name="text">%s%% complete</property>
-					<property name="text_value" type="string">0</property>
-				</widget>
-			</widget>
-			<widget class="SwatFormField">
-				<property name="title" type="string">Upload Progress</property>
-				<widget class="SwatProgressBar" id="upload_progress">
-					<property name="value" type="float">0</property>
-					<property name="text">%s%% complete</property>
-					<property name="text_value" type="string">0</property>
-				</widget>
-			</widget>
-		</widget>
-		<widget class="SwatFrame">
-			<property name="title">Other Orientations</property>
-			<widget class="SwatFormField">
-				<property name="title" type="string">Right to Left</property>
-				<widget class="SwatProgressBar">
-					<property name="value" type="float">0.30</property>
-					<property name="orientation" type="constant">ORIENTATION_RIGHT_TO_LEFT</property>
-				</widget>
-			</widget>
-			<widget class="SwatFormField">
-				<property name="title" type="string">Bottom to Top</property>
-				<widget class="SwatProgressBar">
-					<property name="value" type="float">0.30</property>
-					<property name="orientation" type="constant">ORIENTATION_BOTTOM_TO_TOP</property>
-				</widget>
-			</widget>
-			<widget class="SwatFormField">
-				<property name="title" type="string">Top to Bottom</property>
-				<widget class="SwatProgressBar">
-					<property name="value" type="float">0.30</property>
-					<property name="orientation" type="constant">ORIENTATION_TOP_TO_BOTTOM</property>
-				</widget>
-			</widget>
-		</widget>
+    <widget class="SwatForm">
+        <widget class="SwatFrame">
+            <property name="title">JavaScript Demos</property>
+            <widget class="SwatMessageDisplay" id="note" />
+            <widget class="SwatFormField">
+                <property name="title" type="string">
+                    Download Progress
+                </property>
+                <widget class="SwatProgressBar" id="download_progress">
+                    <property name="value" type="float">0</property>
+                    <property name="text">%s%% complete</property>
+                    <property name="text_value" type="string">0</property>
+                </widget>
+            </widget>
+            <widget class="SwatFormField">
+                <property name="title" type="string">Upload Progress</property>
+                <widget class="SwatProgressBar" id="upload_progress">
+                    <property name="value" type="float">0</property>
+                    <property name="text">%s%% complete</property>
+                    <property name="text_value" type="string">0</property>
+                </widget>
+            </widget>
+        </widget>
+        <widget class="SwatFrame">
+            <property name="title">Other Orientations</property>
+            <widget class="SwatFormField">
+                <property name="title" type="string">Right to Left</property>
+                <widget class="SwatProgressBar">
+                    <property name="value" type="float">0.30</property>
+                    <property name="orientation" type="constant">
+                        ORIENTATION_RIGHT_TO_LEFT
+                    </property>
+                </widget>
+            </widget>
+            <widget class="SwatFormField">
+                <property name="title" type="string">Bottom to Top</property>
+                <widget class="SwatProgressBar">
+                    <property name="value" type="float">0.30</property>
+                    <property name="orientation" type="constant">
+                        ORIENTATION_BOTTOM_TO_TOP
+                    </property>
+                </widget>
+            </widget>
+            <widget class="SwatFormField">
+                <property name="title" type="string">Top to Bottom</property>
+                <widget class="SwatProgressBar">
+                    <property name="value" type="float">0.30</property>
+                    <property name="orientation" type="constant">
+                        ORIENTATION_TOP_TO_BOTTOM
+                    </property>
+                </widget>
+            </widget>
+        </widget>
 
-		<!-- make the progress bars do something interesting -->
-		<widget class="SwatContentBlock">
-			<property name="content"><![CDATA[<script type="text/javascript">
+        <!-- make the progress bars do something interesting -->
+        <widget class="SwatContentBlock">
+            <property
+                name="content"
+            ><![CDATA[
+            <script type="text/javascript">
 			// update status bar text when value changes
 			function handleDownloadValueChange(type, value)
 			{
@@ -103,8 +114,9 @@
 			upload_progress_obj.changeValueEvent.subscribe(
 				handleUploadValueChange);
 
-			</script>]]></property>
-			<property name="content_type">text/xml</property>
-		</widget>
-	</widget>
+			</script>
+            ]]></property>
+            <property name="content_type">text/xml</property>
+        </widget>
+    </widget>
 </swatml>
