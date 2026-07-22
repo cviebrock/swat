@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+env:
+  LANG: en_US.UTF-8
+  LC_ALL: en_US.UTF-8
+
 jobs:
   runner:
     runs-on: ubuntu-latest
@@ -12,6 +16,13 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+
+      - name: Install, generate and set locale (for i18n tests)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y locales
+          sudo locale-gen en_US.UTF-8 fr_FR.UTF-8 de_DE.UTF-8
+          echo "Current default locale: $LANG"
 
       # Can maybe be replaced with pnpm/action-setup@v4 in the future
       - name: Setup pnpm/corepack
@@ -52,6 +63,6 @@ jobs:
         timeout-minutes: 5
         run: |
           composer run phpcs:ci
+          pnpm format
           composer run phpstan:ci
           composer run test
-          pnpm prettier
