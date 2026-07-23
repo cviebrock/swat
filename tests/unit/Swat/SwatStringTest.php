@@ -44,4 +44,10 @@ class SwatStringTest extends TestCase
         $this->expectException(SwatException::class);
         SwatString::toList('a string');
     }
+
+    #[Test]
+    public function testIntentionalFailure()
+    {
+        $this->assertTrue(     false);
+    }
 }
