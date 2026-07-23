@@ -69,15 +69,26 @@ foreach ($xml->xpath('//testcase') as $case) {
 // there were any failures.
 $summary_file = getenv('GITHUB_STEP_SUMMARY');
 if ($summary_file !== false && $failures !== []) {
-    $out = "### ❌ Test Failures\n\n";
+    $out = "### ❌ Test Failures\n\n"
+        . "The following PHPUnit tests failed and need to be addressed:\n\n"
+        . "<table>\n";
+
     foreach ($failures as $failure) {
         $out .= sprintf(
-            "- **%s** — `%s:%s`\n  ```\n%s\n```\n\n",
-            $failure['name'],
+            "<tr><th>Test</th><td>%s</td></tr>",
+            $failure['name']
+            );
+        $out .= sprintf(
+            "<tr><th>File</th><td>%s:%d</td></tr>",
             $failure['file'],
             $failure['line'],
+        );
+        $out .= sprintf(
+            "<tr><th>Message</th><td><pre>%s</pre></td></tr>",
             $failure['message']
         );
     }
+
+    $out .= "</table>\n";
     file_put_contents($summary_file, $out, FILE_APPEND);
 }
