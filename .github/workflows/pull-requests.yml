@@ -31,7 +31,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-node
       - name: Check formatting
-        run: pnpm format
+        run: |
+          set +e
+          output=$(pnpm format 2>&1)
+          status=$?
+          echo "$output"
+          echo "$output" | grep '^\[warn\] ' | sed 's/^\[warn\] //' | while read -r file; do
+            echo "::error file=${file}::This file is not formatted; run 'pnpm format:fix' to fix."
+          done
+          exit $status
 
   phpunit:
     name: PHP Tests
