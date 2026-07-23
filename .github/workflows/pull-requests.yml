@@ -7,6 +7,7 @@ on:
 
 jobs:
   phpcs:
+    name: PHP Code Style
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,6 +16,7 @@ jobs:
         run: composer run phpcs:ci | ./vendor/bin/cs2pr
 
   phpstan:
+    name: PHP Static Analysis
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,6 +25,7 @@ jobs:
         run: composer run phpstan:ci
 
   prettier:
+    name: Formatting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,6 +34,7 @@ jobs:
         run: pnpm format
 
   phpunit:
+    name: PHP Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -44,6 +48,7 @@ jobs:
         run: php .github/scripts/annotate-junit.php build/logs/junit.xml
 
   all-checks:
+    name: All Checks
     if: always()
     needs: [phpcs, phpstan, prettier, phpunit]
     runs-on: ubuntu-latest
