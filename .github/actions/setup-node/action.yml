@@ -4,7 +4,7 @@ runs:
   using: composite
   steps:
     - name: Setup pnpm/Corepack
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
         node-version-file: 'package.json'
 
@@ -13,7 +13,7 @@ runs:
       run: npm i -g --force corepack && corepack enable
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
         node-version-file: 'package.json'
         cache: 'pnpm'

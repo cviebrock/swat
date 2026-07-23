@@ -10,27 +10,30 @@ jobs:
     name: PHP Code Style
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-php
       - name: Check PHP code style
+        shell: bash
         run: composer run phpcs:ci | ./vendor/bin/cs2pr
 
   phpstan:
     name: PHP Static Analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-php
       - name: Run PHP static analysis
+        shell: bash
         run: composer run phpstan:ci
 
   prettier:
     name: Formatting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-node
       - name: Check formatting
+        shell: bash
         run: |
           # Run the formatting check and capture the status code
           set +e
@@ -42,6 +45,7 @@ jobs:
           # list of the problem files to the GH job summary
           if [ "$status" -ne 0 ]; then
             {
+              echo "The following files are not formatted correct; run `pnpm format:fix` to correct them."
               echo "$files" | while IFS= read -r file; do
                 [ -n "$file" ] && echo "- \`$file\`"
               done
@@ -57,14 +61,17 @@ jobs:
     name: PHP Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-php
       - name: Run PHPUnit tests
+        shell: bash
         run: |
           mkdir -p build
           composer run test:ci
+
       - name: Annotate PHPUnit failures
         if: always()
+        shell: bash
         run: php .github/scripts/annotate-junit.php build/logs/junit.xml
 
   all-checks:
@@ -74,6 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Verify all checks passed
+        shell: bash
         run: |
           if ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}; then
             echo "One or more checks failed"
