@@ -60,4 +60,10 @@ class SwatStringTest extends TestCase
     {
         $this->fail('Intentional fail expected');
     }
+
+    #[Test]
+    public function testAnotherIntentionalFail()
+    {
+        $this->fail('This one fails too');
+    }
 }

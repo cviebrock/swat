@@ -28,6 +28,19 @@ foreach ($xml->xpath('//testcase') as $case) {
         $name = (string) $case['name'];
         $raw = trim((string) $problem);
 
+        // PHPUnit appends the failure location as a trailing line using the
+        // absolute path. We already know the relative path and line number,
+        // so we can strip it to avoid a confusing absolute path in the summary.
+        $abs = (string) $case['file'];
+        if ($abs !== '') {
+            $raw = preg_replace(
+                '/\R+' . preg_quote($abs, '/') . ':\d+\s*$/',
+                '',
+                $raw
+            );
+            $raw = rtrim($raw);
+        }
+
         // GH annotation output
         $msg = str_replace(
             ['%', "\r", "\n"],
@@ -44,9 +57,9 @@ foreach ($xml->xpath('//testcase') as $case) {
 
         // keep for Markdown summary
         $failures[] = [
-            'name' => $name,
-            'file' => $src_file,
-            'line' => $line,
+            'name'    => $name,
+            'file'    => $src_file,
+            'line'    => $line,
             'message' => $raw,
         ];
     }
@@ -56,10 +69,10 @@ foreach ($xml->xpath('//testcase') as $case) {
 // there were any failures.
 $summary_file = getenv('GITHUB_STEP_SUMMARY');
 if ($summary_file !== false && $failures !== []) {
-    $out = "### ❌ Test failures\n\n";
+    $out = "### ❌ Test Failures\n\n";
     foreach ($failures as $failure) {
         $out .= sprintf(
-            "**%s** — `%s:%s`\n\n```\n%s\n```\n\n",
+            "- **%s** — `%s:%s`\n  ```\n%s\n```\n\n",
             $failure['name'],
             $failure['file'],
             $failure['line'],
