@@ -32,13 +32,25 @@ jobs:
       - uses: ./.github/actions/setup-node
       - name: Check formatting
         run: |
+          # Run the formatting check and capture the status code
           set +e
-          output=$(pnpm format 2>&1)
+          files=$(pnpm run --silent format:ci)
           status=$?
-          echo "$output"
-          echo "$output" | grep '^\[warn\] ' | sed 's/^\[warn\] //' | while read -r file; do
-            echo "::error file=${file}::This file is not formatted; run 'pnpm format:fix' to fix."
-          done
+          set -e
+
+          # if there are errors, then output a markdown-formatted
+          # list of the problem files to the GH job summary
+          if [ "$status" -ne 0 ]; then
+            {
+              echo "$files" | while IFS= read -r file; do
+                [ -n "$file" ] && echo "- \`$file\`"
+              done
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          # echo the file list to the normal job log and re-exit
+          # with prettier's original status so the job passes/fails
+          echo "$files"
           exit $status
 
   phpunit:
